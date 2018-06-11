@@ -50,12 +50,10 @@ end
 toc()
 
 writedlm("Output/theCoil.txt", [x y z])
-writedlm("Output/X.txt", X)
-writedlm("Output/Y.txt", Y)
-writedlm("Output/Z.txt", Z)
-writedlm("Output/Bx.txt", Bx)
-writedlm("Output/By.txt", By)
-writedlm("Output/Bz.txt", Bz)
+
+writedlm("Output/XZBx.txt", [X[:] Z[:] Bx[:]])
+writedlm("Output/XZBy.txt", [X[:] Z[:] By[:]])
+writedlm("Output/XZBz.txt", [X[:] Z[:] Bz[:]])
 
 # using Plots
 # plotly() # Choose the Plotly.jl backend for web interactivity
