@@ -1,13 +1,25 @@
 #!/home/mathias/Downloads/julia-d55cadc350/bin//julia
 include("myMeshgrid.jl")
+include("elementOfLength.jl")
+include("coordinateOfCoil.jl")
 
-x = linspace(0,1,3)
-y = x
+N = 2
+l = 1
+a = 7.25
+n = 1e1
 
-X,Y = meshgrid(x,y)
+x,y,z = coordinateOfCoil(N,l,a,n)
+println("x = ",x)
+println("y = ",y)
+println("z = ",z)
 
-println(x)
-println(y)
+dx,dy,dz = elementOfLength(N,l,a,n)
+println("dx = ",dx)
+println("dy = ",dy)
+println("dz = ",dz)
 
-println(X)
-println(Y)
+testx = 7.25
+for i in 1:length(dx)
+    testx += dx[i]
+    println(testx)
+end
