@@ -3,11 +3,11 @@ include("meshgrid.jl")
 include("elementOfLength.jl")
 include("coordinateOfCoil.jl")
 
-N = 125 # Number of turns in coil
+N = 10 # Number of turns in coil
 l = 25e-3 # Length of coil, m
 a0 = 7.25e-3 # Inner radius of coil, m
 da = 0.2e-3 # The thickness of one layer of turns. This is the outer diameter of the magnet wire, which includes the enamel
-n = Int(1e4) # Number of points in the model of the coil
+n = Int(1e3) # Number of points in the model of the coil
 
 # Calculate the coordinates for a simple one-layer coil:
 a = a0 + da/2
@@ -49,7 +49,15 @@ for i in 1:nTestPoints
 end
 toc()
 
-using Plots
-plotly() # Choose the Plotly.jl backend for web interactivity
-plot(x,y,z)
+writedlm("Output/theCoil.txt", [x y z])
+writedlm("Output/X.txt", X)
+writedlm("Output/Y.txt", Y)
+writedlm("Output/Z.txt", Z)
+writedlm("Output/Bx.txt", Bx)
+writedlm("Output/By.txt", By)
+writedlm("Output/Bz.txt", Bz)
+
+# using Plots
+# plotly() # Choose the Plotly.jl backend for web interactivity
+# plot(x,y,z)
 # surface(X,Z,Bz)
