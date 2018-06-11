@@ -1,6 +1,4 @@
-# meshgrid
-# Emulates the 2D version of Matlab's meshgrid function
-# Needs to 
+#!/home/mathias/Downloads/julia-d55cadc350/bin//julia
 include("myMeshgrid.jl")
 
 x = linspace(0,1,3)
