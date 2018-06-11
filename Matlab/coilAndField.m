@@ -8,10 +8,10 @@ nD = 2 % Number of dimensions of the trial point arrays
 
 % f = waitbar(0,'Initializing');
 
-N = 10;
+N = 125;
 l = 25e-3;
 a0 = 7.25e-3; % The inner diameter of the coil
-n = 2e3;
+n = 1e4;
 % dtheta = 2*pi*N/n;
 % theta = linspace(0,2*pi*N - dtheta,n);
 
@@ -86,7 +86,7 @@ if plotAll
   view(30,45)
   filename = 'theCoil';
   print(1,filename,'-dpng','-r300')
-  savefig(1,filename)
+  % savefig(1,filename)
   % matlab2tikz([filename '.tikz'],'height','\figureheight','width','\figurewidth','showInfo',false);
 end
 
@@ -97,9 +97,9 @@ nElements = length(x);
 
 % For 2D:
 nGrid = 75;
-% For 3D:
-nGridX = 11;
-nGridZ = 25;
+% For sample only:
+% nGridX = 11;
+% nGridZ = 25;
 
 switch nD
   case 3
@@ -178,7 +178,7 @@ for j = 1:nTestPoints
 end
 toc
 
-indices = (abs(abs(X) - a) < 5*da) & (abs(Z) < l/2 + da);
+indices = (abs(abs(X) - a) < 5*da) & (abs(Z) < l/2 + 5*da);
 Bx(indices) = NaN; By(indices) = NaN; Bz(indices) = NaN;
 
 if plotAll
@@ -200,7 +200,7 @@ if plotAll
   view(30,45)
   filename = 'theField';
   print(1,filename,'-dpng','-r300')
-  savefig(1,filename)
+  % savefig(1,filename)
   % matlab2tikz([filename '.tikz'],'height','\figureheight','width','\figurewidth','showInfo',false);
   % waitbar(0.25,f,'Plotting');
 
@@ -215,7 +215,7 @@ if plotAll
     % view(30,45)
     filename = 'theField2D';
     print(1,filename,'-dpng','-r300')
-    savefig(1,filename)
+    % savefig(1,filename)
     % matlab2tikz([filename '.tikz'],'height','\figureheight','width','\figurewidth','showInfo',false);
 
     clf;
@@ -268,7 +268,7 @@ if plotAll
 
     filename = 'theThreeFields';
     print(1,filename,'-dpng','-r300')
-    savefig(1,filename)
+    % savefig(1,filename)
     % matlab2tikz([filename '.tikz'],'height','\figureheight','width','\figurewidth','showInfo',false);
     % waitbar(0.75,f,'Plotting');
 
@@ -286,7 +286,7 @@ if plotAll
 
     filename = 'theXField';
     print(1,filename,'-dpng','-r300')
-    savefig(1,filename)
+    % savefig(1,filename)
     % matlab2tikz([filename '.tikz'],'height','\figureheight','width','\figurewidth','showInfo',false);
     % waitbar(0.85,f,'Plotting');
 
@@ -304,7 +304,7 @@ if plotAll
 
     filename = 'theYField';
     print(1,filename,'-dpng','-r300')
-    savefig(1,filename)
+    % savefig(1,filename)
     % matlab2tikz([filename '.tikz'],'height','\figureheight','width','\figurewidth','showInfo',false);
     % waitbar(0.925,f,'Plotting');
 
@@ -322,7 +322,7 @@ if plotAll
 
     filename = 'theZField';
     print(1,filename,'-dpng','-r300')
-    savefig(1,filename)
+    % savefig(1,filename)
     % matlab2tikz([filename '.tikz'],'height','\figureheight','width','\figurewidth','showInfo',false);
 
     theDifference = (max(max(Bz)) - min(min(Bz)))/min(min(Bz));
