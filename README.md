@@ -29,7 +29,6 @@ I ended up adding scripts for plotting using Gnuplot, Python (Matplotlib) and Ma
 All in all, it ended up being a project in programming and code management, rather than electromagnetism, and took just less than a week of part-time work.
 
 ## Examples
-### A coil
 ![A coil made and plotted with this library](Output/theCoil.png)
 A coil constructed with this library.
 
