@@ -2,15 +2,13 @@
 include("meshgrid.jl")
 include("elementOfLength.jl")
 include("coordinateOfCoil.jl")
+include("initializeVariables.jl")
 
-N = 100 # Number of turns in coil
-l = 25e-3 # Length of coil, m
-a0 = 7.25e-3 # Inner radius of coil, m
-da = 0.2e-3 # The thickness of one layer of turns. This is the outer diameter of the magnet wire, which includes the enamel
-n = Int(1e4) # Number of points in the model of the coil
+# Get all variables necessary for calculating the coil
+N,l,a0,Δa,n = initializeVariables()
 
 # Calculate the coordinates for a simple one-layer coil:
-a = a0 + da/2
+a = a0 + Δa/2
 x,y,z = coordinateOfCoil(N,l,a,n)
 Δx,Δy,Δz = elementOfLength(N,l,a,n)
 
