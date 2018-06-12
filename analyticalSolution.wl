@@ -22,7 +22,7 @@ L := 25*^-3
 \[Micro] := 4*Pi*1*^-7
 n := 125
 current := 1*^-3
-preFactor := (\[Micro]*n*current)/(2*Pi)
+preFactor := (\[Micro]*n*current)/(4*Pi)
 
 (* Definitions of simplifying variables *)
 h[rho_] := Sqrt[4*a*rho/(a + rho)^2]
