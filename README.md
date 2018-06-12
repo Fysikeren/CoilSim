@@ -10,7 +10,7 @@ To then find the analytic solution for the _z_ component of the field, run ```an
 Finally, to visualize the results, run one of ```plotResults.m``` (Matlab), ```plotResults.plt``` (gnuplot) or ```plotResults.py``` (Python/Matplotlib).
 Note that only the Matlab version plots the vector field, and that the Python version does not plot the analytic solution (yet).
 
-All these scripts include a hashbang that points to the relevant executable installation on my PC, so I can run them simply by typing, say:
+All these scripts include a hashbang that points to the relevant executable on my PC, so I can run them simply by typing, say:
 ```bash
 ./coilAndField.jl
 ```
@@ -26,4 +26,12 @@ I wrote a (slow!) version in Matlab, and have now rewritten it in Julia to learn
 
 I ended up adding scripts for plotting using Gnuplot, Python (Matplotlib) and Matlab.
 
-All in all, it ended up being a project in programming and code management, rather than electromagnetism, and took just less than a week.
+All in all, it ended up being a project in programming and code management, rather than electromagnetism, and took just less than a week of part-time work.
+
+## Examples
+### A coil
+![A coil made and plotted with this library](Output/theCoil.png)
+A coil constructed with this library.
+
+![The _z_ component of the magnetic field from the coil](Output/Bz.png)
+The _z_ component of the magnetic field from the above coil.
