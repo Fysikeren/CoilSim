@@ -31,7 +31,7 @@ set dgrid3d 50,50
 # set contour
 
 set output 'Output/Bx.png'
-set zrange [-1e-6:6e-6]
+set zrange [-1e-5:6e-5]
 splot "Output/XZBx.txt" u 1:2:3 with line ls 1 title 'B_x'
 
 set output 'Output/By.png'
