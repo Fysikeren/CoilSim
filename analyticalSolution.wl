@@ -18,9 +18,9 @@ Z*)
 
 (* Definitions of constants *)
 a := 7.25*^-3
-L := 25*^-3
+L := 2*^-3
 \[Micro] := 4*Pi*1*^-7
-n := 125
+n := 10
 current := 1*^-3
 preFactor := (\[Micro]*n*current)/(4*Pi)
 
