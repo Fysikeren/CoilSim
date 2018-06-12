@@ -1,7 +1,7 @@
 # initializeVariables
 # Outputs the variables necessary for calculating the coil.
 # Could be changed into a promt for the user.
-function initializeVariables()
+function defineConstants()
     N = 100 # Number of turns in coil
     l = 25e-3 # Length of coil, m
     a0 = 7.25e-3 # Inner radius of coil, m

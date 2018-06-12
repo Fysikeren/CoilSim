@@ -2,10 +2,10 @@
 include("meshgrid.jl")
 include("elementOfLength.jl")
 include("coordinateOfCoil.jl")
-include("initializeVariables.jl")
+include("defineConstants.jl")
 
 # Get all variables necessary for calculating the coil
-N,l,a0,Δa,n = initializeVariables()
+N,l,a0,Δa,n = defineConstants()
 
 # Calculate the coordinates for a simple one-layer coil:
 a = a0 + Δa/2
