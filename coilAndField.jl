@@ -3,6 +3,7 @@ include("meshgrid.jl")
 include("elementOfLength.jl")
 include("coordinateOfCoil.jl")
 include("defineConstants.jl")
+include("defineTestPoints.jl")
 
 # Get all variables necessary for calculating the coil
 N,l,a0,Δa,n = defineConstants()
@@ -14,14 +15,7 @@ x,y,z = coordinateOfCoil(N,l,a,n)
 
 # Calculate coordinates of points to test the magnetic field vectors
 nGrid = 75
-xs = linspace(-1.4*a,1.4*a,nGrid)
-zs = linspace(-0.7*l,0.7*l,2*nGrid) # The length of the coil is roughly twice its diameter, so we use twice as many points along the z direction
-X,Z = meshgrid(xs,zs)
-Y = zeros(size(X))
-
-Bx = zeros(size(X))
-By = zeros(size(X))
-Bz = zeros(size(X))
+X,Y,Z,Bx,By,Bz = defineTestPoints(a,l,nGrid)
 
 nTestPoints = length(X[:])
 
