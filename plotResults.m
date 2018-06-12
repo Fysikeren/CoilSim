@@ -3,10 +3,6 @@ clear
 
 coilCoordinates = importdata('Output/theCoil.txt');
 
-% importdata('Output/XZBx.txt', [X[:] Z[:] Bx[:]]);
-% importdata('Output/XZBy.txt', [X[:] Z[:] By[:]]);
-% importdata('Output/XZBz.txt', [X[:] Z[:] Bz[:]]);
-
 X = importdata('Output/X.txt');
 Y = importdata('Output/Y.txt');
 Z = importdata('Output/Z.txt');
@@ -41,8 +37,10 @@ grid on
 filename = 'Output/theField';
 print(1,filename,'-dpng','-r300')
 
-minimumField = min([min(min(Bx)) min(min(By)) min(min(Bz))]);
-maximumField = max([max(max(Bx)) max(max(By)) max(max(Bz))]);
+% minimumField = min([min(min(Bx)) min(min(By)) min(min(Bz))]);
+% maximumField = max([max(max(Bx)) max(max(By)) max(max(Bz))]);
+minimumField = -6e-6;
+maximumField = 12e-6;
 
 clf
 mesh(X,Z,Bx)
@@ -66,4 +64,24 @@ zlim([minimumField maximumField])
 view(30,30)
 box on
 filename = 'Output/Bz';
+print(1,filename,'-dpng','-r300')
+
+% clear
+
+XZBzAnalytic = importdata('Output/XZBzAnalytic.txt');
+
+n = sqrt(size(XZBzAnalytic,1)/2);
+
+X = reshape(XZBzAnalytic(:,1),2*n,n);
+Z = reshape(XZBzAnalytic(:,2),2*n,n);
+BzAnalytic = reshape(XZBzAnalytic(:,3),2*n,n);
+
+whos
+
+clf
+mesh(X,Z,BzAnalytic)
+zlim([minimumField maximumField])
+view(30,30)
+box on
+filename = 'Output/BzAnalytic';
 print(1,filename,'-dpng','-r300')

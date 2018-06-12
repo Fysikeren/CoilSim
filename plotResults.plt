@@ -27,11 +27,13 @@ set output 'Output/theCoil.png'
 # set size ratio -1
 splot "Output/theCoil.txt" u 1:2:3 with line ls 2 title 'The coil'
 
-set dgrid3d 75,75
+set dgrid3d 150,75
 # set contour
 
+set zrange [-6e-6:12e-6]
+
+# Numerical solutions
 set output 'Output/Bx.png'
-set zrange [-2e-6:4e-6]
 splot "Output/XZBx.txt" u 1:2:3 with line ls 1 title 'B_x'
 
 set output 'Output/By.png'
@@ -39,6 +41,10 @@ splot "Output/XZBy.txt" u 1:2:3 with line ls 1 title 'B_y'
 
 set output 'Output/Bz.png'
 splot "Output/XZBz.txt" u 1:2:3 with line ls 1 title 'B_z'
+
+# Analytic solution for Bz
+set output 'Output/BzAnalytic.png'
+splot "Output/XZBzAnalytic.txt" u 1:2:3 with line ls 1 title 'B_z'
 
 # set output 'Output/Ball.png'
 # splot   "Output/XZBx.txt" u 1:2:3 with line ls 1 title 'B_x',\
