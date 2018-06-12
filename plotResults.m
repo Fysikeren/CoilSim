@@ -40,7 +40,7 @@ print(1,filename,'-dpng','-r300')
 % minimumField = min([min(min(Bx)) min(min(By)) min(min(Bz))]);
 % maximumField = max([max(max(Bx)) max(max(By)) max(max(Bz))]);
 minimumField = -6e-6;
-maximumField = 12e-6;
+maximumField = 10e-6;
 
 clf
 mesh(X,Z,Bx)
