@@ -14,7 +14,7 @@ x,y,z = coordinateOfCoil(N,l,a,n)
 Δx,Δy,Δz = elementOfLength(N,l,a,n)
 
 # Calculate coordinates of points to test the magnetic field vectors
-nGrid = 75
+nGrid = 40
 X,Y,Z,Bx,By,Bz = defineTestPoints(a,l,nGrid)
 
 nTestPoints = length(X[:])
