@@ -4,7 +4,7 @@
 # length.
 function elementOfLength(N,l,a,n)
   Δθ = 2*pi*N/n
-  θ = linspace(0,2*pi*N - dθ,n)
+  θ = linspace(0,2*pi*N - Δθ,n)
   Δx = -a*sin.(θ)
   Δy = a*cos.(θ)
   Δz = (l/(2*pi*N))*ones(size(θ))
