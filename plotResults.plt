@@ -27,11 +27,11 @@ set output 'Output/theCoil.png'
 # set size ratio -1
 splot "Output/theCoil.txt" u 1:2:3 with line ls 2 title 'The coil'
 
-set dgrid3d 50,50
+set dgrid3d 75,75
 # set contour
 
 set output 'Output/Bx.png'
-set zrange [-2e-6:3e-6]
+set zrange [-2e-6:4e-6]
 splot "Output/XZBx.txt" u 1:2:3 with line ls 1 title 'B_x'
 
 set output 'Output/By.png'
