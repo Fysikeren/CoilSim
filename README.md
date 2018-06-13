@@ -2,13 +2,13 @@
 Julia scripts for drawing a solenoid and numerically calculating the magnetic field from it.
 
 ## Use
-To calculate the field of a coil with 125 turns, an inner diameter of 14.5 mm, and a wire diameter of 0.2 mm, run ```coilAndField.jl```.
+To calculate the field of a coil with 10 turns, an inner diameter of 14.5 mm, and a wire diameter (turn pitch) of 0.2 mm, run ```coilAndField.jl```.
 This does the calculations and exports the results to files in the folder ```Output```.
 
-To then find the analytic solution for the _z_ component of the field, run ```analyticalSolution.wl```.
+To then find the analytical solution for the _z_ component of the field, run ```analyticalSolution.wl```.
 
 Finally, to visualize the results, run one of ```plotResults.m``` (Matlab), ```plotResults.plt``` (gnuplot) or ```plotResults.py``` (Python/Matplotlib).
-Note that only the Matlab version plots the vector field, and that the Python version does not plot the analytic solution (yet).
+Note that only the Matlab version plots the vector field, and that the Python version does not plot the analytical solution (yet).
 
 All these scripts include a hashbang that points to the relevant executable on my PC, so I can run them simply by typing, say:
 ```bash
