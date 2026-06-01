@@ -13,6 +13,11 @@ Bx = np.genfromtxt("Output/Bx.txt")
 By = np.genfromtxt("Output/By.txt")
 Bz = np.genfromtxt("Output/Bz.txt")
 
+# Load analytical solution
+XZBzAnalytic = np.genfromtxt("Output/XZBzAnalytic.txt")
+n = int(np.sqrt(XZBzAnalytic.shape[0] / 2))
+BzAnalytic = XZBzAnalytic[:, 2].reshape(2*n, n)
+
 print(coil[:,0])
 
 fig = plt.figure()
@@ -46,6 +51,16 @@ fig = plt.figure()
 ax = fig.gca(projection = '3d')
 ax.plot_surface(X, Z, Bz, cmap = cm.coolwarm, antialiased = False)
 fig.savefig('Output/Bz.png', bbox_inches = "tight")
+
+fig = plt.figure()
+ax = fig.gca(projection = '3d')
+ax.plot_surface(X, Z, BzAnalytic, cmap = cm.coolwarm, antialiased = False)
+fig.savefig('Output/BzAnalytic.png', bbox_inches = "tight")
+
+fig = plt.figure()
+ax = fig.gca(projection = '3d')
+ax.plot_surface(X, Z, Bz - BzAnalytic, cmap = cm.coolwarm, antialiased = False)
+fig.savefig('Output/BzDifference.png', bbox_inches = "tight")
 
 # Axes3D.plot_surface(X,Z,Bz)
 # plt.show()
